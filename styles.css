@@ -1,0 +1,474 @@
+/* ============================================================
+   PORTFOLIO STYLES - Jay Suthar
+   Edit colors and fonts here; all three pages update together.
+   ============================================================ */
+
+/* ---------- THEME VARIABLES ---------- */
+:root {
+  /* Light theme (default) */
+  --bg: #faf9f6;
+  --bg-elevated: #ffffff;
+  --text: #18181a;
+  --text-muted: #6a6a6e;
+  --rule: #d8d6d0;
+  --rule-strong: #b4b2ac;
+  --placeholder-bg: #f0eee8;
+
+  /* Type scale */
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-body: "Newsreader", Georgia, serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  /* Layout */
+  --content-width: 720px;
+  --content-padding: 1.5rem;
+}
+
+[data-theme="dark"] {
+  --bg: #0e0e10;
+  --bg-elevated: #18181b;
+  --text: #ececea;
+  --text-muted: #8c8c8e;
+  --rule: #28282a;
+  --rule-strong: #45454a;
+  --placeholder-bg: #17171a;
+}
+
+/* ---------- RESET ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 1px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--text);
+}
+
+/* ---------- NAVIGATION ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+  padding: 1rem var(--content-padding);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  border-bottom: none;
+}
+
+.nav-brand:hover {
+  border-bottom: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: none;
+  color: var(--text-muted);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  border-bottom: none;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  border-radius: 2px;
+}
+
+.theme-toggle:hover {
+  background: var(--rule);
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+main {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 4rem var(--content-padding) 6rem;
+}
+
+/* ---------- HERO (HOME) ---------- */
+.hero {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(3rem, 8vw, 5.2rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.hero-meta-divider {
+  margin: 0 0.6rem;
+  opacity: 0.5;
+}
+
+.hero-intro {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 38rem;
+}
+
+.hero-intro em {
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2rem;
+}
+
+.hero-ctas a {
+  border-bottom: 1px solid var(--text);
+}
+
+.hero-ctas a:hover {
+  color: var(--text-muted);
+  border-bottom-color: var(--text-muted);
+}
+
+/* ---------- SECTIONS (ABOUT, PROJECTS) ---------- */
+.page-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 4rem;
+}
+
+.section {
+  margin-bottom: 5rem;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.section-number {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.section p {
+  margin-bottom: 1.25rem;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- CORE COMPETENCIES ---------- */
+.competency {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+.competency:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.competency-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.competency-body {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ---------- PHILOSOPHY PULL QUOTE ---------- */
+.pullquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  padding: 2rem 0 2rem 1.5rem;
+  border-left: 2px solid var(--text);
+  color: var(--text);
+}
+
+/* ---------- PROJECT CARDS (PROJECTS PAGE) ---------- */
+.project {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-top: 1px solid var(--rule);
+}
+
+.project:first-of-type {
+  padding-top: 0;
+  border-top: none;
+}
+
+.project-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 2rem;
+}
+
+/* Image placeholder block */
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--placeholder-bg);
+  border: 1px dashed var(--rule-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 2.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Project narrative blocks */
+.project-block {
+  margin-bottom: 1.75rem;
+}
+
+.project-block:last-child {
+  margin-bottom: 0;
+}
+
+.project-block-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.project-block p {
+  font-size: 1.05rem;
+}
+
+/* Placeholder text style (so it visually reads as "fill me in") */
+.placeholder-text {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 6rem;
+  padding: 2rem var(--content-padding);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.footer-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer a {
+  color: var(--text-muted);
+  border-bottom: none;
+}
+
+.footer a:hover {
+  color: var(--text);
+  border-bottom: none;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  body {
+    font-size: 17px;
+  }
+
+  .nav {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a:not(.theme-toggle) {
+    display: none;
+  }
+
+  .nav-links a.nav-link-mobile-visible {
+    display: inline;
+  }
+
+  main {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .hero {
+    padding-top: 1rem;
+  }
+
+  .hero-name {
+    font-size: 3rem;
+  }
+
+  .hero-meta {
+    margin-bottom: 2rem;
+  }
+
+  .project-title {
+    font-size: 1.7rem;
+  }
+
+  .section-heading {
+    font-size: 1.6rem;
+  }
+
+  .pullquote {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+  }
+}
+
+/* On mobile, keep About and Projects links visible. */
+@media (max-width: 600px) {
+  .nav-links .nav-page-link {
+    display: inline;
+    font-size: 0.72rem;
+  }
+}

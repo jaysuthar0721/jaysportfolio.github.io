@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Jay Suthar</title>
+  <meta name="description" content="About Jay Suthar: engineering philosophy, executive summary, and core competencies across systems integration, technical leadership, and prototyping.">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Jay Suthar</a>
+      <div class="nav-links">
+        <a href="about.html" class="nav-page-link active">About</a>
+        <a href="projects.html" class="nav-page-link">Projects</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark or light theme">Theme</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <p class="page-title">About</p>
+
+    <!-- 01: EXECUTIVE SUMMARY -->
+    <section class="section">
+      <span class="section-number">01 / Executive Summary</span>
+      <h2 class="section-heading">An engineer who thinks like a systems integrator.</h2>
+      <p>
+        I'm a Mechanical Engineering junior at Colorado State University focused on aerospace propulsion and integrated vehicle systems. My engineering philosophy centers on the decision process behind a design as much as the part that ends up on the bench.
+      </p>
+      <p>
+        I treat each project as a sequence of trade studies: identify the constraint that matters most, justify the choice with data, and prototype fast enough to be wrong cheaply. That mindset runs through my SolidWorks and ANSYS workflows, my ESP32 firmware and PID tuning, my MATLAB and Simulink simulations, and my hands-on work in machining, 3D printing, and composites.
+      </p>
+      <p>
+        I document carefully because an engineering decision that cannot be communicated cannot be reviewed. What I bring to a team is a junior engineer who is already equally comfortable in a CAD assembly, on an electronics bench, and in a design review.
+      </p>
+    </section>
+
+    <!-- 02: CORE COMPETENCIES -->
+    <section class="section">
+      <span class="section-number">02 / Core Competencies</span>
+      <h2 class="section-heading">Three areas of working capability.</h2>
+
+      <div class="competency">
+        <h3 class="competency-title">Systems Integration &amp; Engineering Design</h3>
+        <p class="competency-body">
+          I treat mechanical, electronic, and control subsystems as one continuous design problem, using interface specifications and CAD-to-firmware traceability so every connection between subsystems is owned, documented, and testable.
+        </p>
+      </div>
+
+      <div class="competency">
+        <h3 class="competency-title">Technical Leadership &amp; Project Management</h3>
+        <p class="competency-body">
+          I lead by writing the spec everyone else builds against, scheduling design reviews around real decision points rather than calendar dates, and surfacing blockers early so the team spends its time on engineering instead of coordination.
+        </p>
+      </div>
+
+      <div class="competency">
+        <h3 class="competency-title">Hands-On Prototyping &amp; Manufacturing</h3>
+        <p class="competency-body">
+          I shorten the loop between concept and test article by selecting the right fabrication method for each part (FDM print, machined aluminum, composite layup, or sheet metal) and by building test rigs that measure what the design actually needs to be measured against.
+        </p>
+      </div>
+    </section>
+
+    <!-- 03: PHILOSOPHY -->
+    <section class="section">
+      <span class="section-number">03 / Philosophy</span>
+      <h2 class="section-heading">What I want my work to show.</h2>
+      <blockquote class="pullquote">
+        Engineering judgment is built one documented decision at a time. I want my work to show not only what I designed, but why I designed it that way, what data convinced me, and what I would change if I had to do it again. The hardware on the bench is the proof. The reasoning behind it is the work.
+      </blockquote>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>&copy; 2026 Jay Suthar</div>
+      <div class="footer-links">
+        <a href="mailto:your.email@colostate.edu">Email</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="portfolio.pdf" target="_blank" rel="noopener">PDF</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    toggleBtn.addEventListener('click', function () {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  </script>
+
+</body>
+</html>
