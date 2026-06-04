@@ -20,7 +20,7 @@
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
 
   /* Layout */
-  --content-width: 720px;
+  --content-width: 100%;
   --content-padding: 1.5rem;
 }
 
@@ -154,6 +154,54 @@ main {
 
 /* ---------- HERO (HOME) ---------- */
 .hero {
+   .hero-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.hero-photo-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-photo-placeholder {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--color-border);
+  color: var(--color-meta);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .hero-layout {
+    flex-direction: column-reverse;
+  }
+
+  .hero-photo,
+  .hero-photo-img,
+  .hero-photo-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+}
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
