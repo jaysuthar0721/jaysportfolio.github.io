@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
   <title>Projects | Jay Suthar</title>
   <meta name="description" content="Selected engineering case studies by Jay Suthar covering integrated drone systems, composites, structural FEA, and motor control.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..600,30..100,0..1;1,9..144,400,50,0&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -23,25 +26,29 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand">Jay Suthar</a>
+      <a href="index.html" class="nav-brand no-underline">Jay Suthar</a>
       <div class="nav-links">
-        <a href="about.html" class="nav-page-link">About</a>
-        <a href="projects.html" class="nav-page-link active">Projects</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark or light theme">Theme</button>
+        <a href="about.html" class="no-underline">About</a>
+        <a href="projects.html" class="active no-underline">Projects</a>
+        <button class="theme-toggle" id="themeToggle">Theme</button>
       </div>
     </div>
   </nav>
 
-  <main>
-    <p class="page-title">Projects</p>
+  <main id="main">
+    <h1 class="page-title" data-reveal>Selected Projects</h1>
 
     <!-- ==========================================
          PROJECT 01: VARIABLE GEOMETRY DRONE (REAL)
          ========================================== -->
-    <article class="project">
-      <p class="project-meta">Project 01 / MECH 307 / Spring 2026 / Role: Electronics Architecture &amp; Flight Controls</p>
+    <article class="project" data-reveal>
+      <p class="project-meta">Project&nbsp;01 / MECH&nbsp;307 / Spring&nbsp;2026 / Role: Electronics Architecture &amp; Flight Controls</p>
       <h2 class="project-title">Variable Geometry Drone</h2>
 
       <div class="image-placeholder">[ Hero image: assembled drone on test stand ]</div>
@@ -49,21 +56,21 @@
       <div class="project-block">
         <span class="project-block-label">Challenge</span>
         <p>
-          Design and demonstrate a quadcopter whose secondary arms rotate in flight through an integrated gear and servo actuation system, and prove closed-loop attitude control on a constrained test stand within a single semester. The team had to integrate a mechanical actuation mechanism, a custom electronics stack, and a flight controller without the benefit of an off-the-shelf flight computer or vendor documentation for the chosen ESCs.
+          Design and demonstrate a quadcopter whose secondary arms rotate in flight through an integrated gear and servo actuation system, and prove closed-loop attitude control on a constrained test stand within a single semester. The team had to integrate a mechanical actuation mechanism, a custom electronics stack, and a flight controller without the benefit of an off-the-shelf flight computer or vendor documentation for the chosen <span translate="no">ESCs</span>.
         </p>
       </div>
 
       <div class="project-block">
         <span class="project-block-label">Action</span>
         <p>
-          I owned the electronics architecture and the PID controls path. I selected and integrated a dual-ESP32 transmit and receive system using ESP-NOW for low-latency manual control, paired with an MPU-6050 IMU running through a complementary filter and a 44 Hz digital low-pass to reject motor vibration. When the brushless ESCs would not respond to standard servo PWM, I rebuilt the motor command layer around the DSHOT protocol and isolated an undocumented Vbat connection on the ESC pinout that had damaged a previous hardware revision, which became a permanent wire-management rule for the team. I tuned the PID loops empirically on a 2-axis test stand and dropped the integral term once it proved more aggressive than useful at our gain levels, running stable P and D control instead.
+          I owned the electronics architecture and the <span translate="no">PID</span> controls path. I selected and integrated a dual-<span translate="no">ESP32</span> transmit and receive system using <span translate="no">ESP-NOW</span> for low-latency manual control, paired with an <span translate="no">MPU-6050</span> <span translate="no">IMU</span> running through a complementary filter and a 44&nbsp;Hz digital low-pass to reject motor vibration. When the brushless <span translate="no">ESCs</span> would not respond to standard servo <span translate="no">PWM</span>, I rebuilt the motor command layer around the <span translate="no">DSHOT</span> protocol and isolated an undocumented <span translate="no">Vbat</span> connection on the <span translate="no">ESC</span> pinout that had damaged a previous hardware revision, which became a permanent wire-management rule for the team. I tuned the <span translate="no">PID</span> loops empirically on a 2-axis test stand and dropped the integral term once it proved more aggressive than useful at our gain levels, running stable P and D control instead.
         </p>
       </div>
 
       <div class="project-block">
         <span class="project-block-label">Impact</span>
         <p>
-          Demonstrated approximately one second of self-stabilized closed-loop attitude control on the test stand, with the controller correctly generating corrective motor commands from IMU feedback in real time. Wireless control and IMU pipeline performed reliably across all flight tests, with manual control inputs received and acted on correctly throughout testing. Produced a written lessons-learned record covering connector specification, wire management, and realistic firmware iteration budgets, which is being handed forward to future MECH 307 teams.
+          Demonstrated approximately one second of self-stabilized closed-loop attitude control on the test stand, with the controller correctly generating corrective motor commands from <span translate="no">IMU</span> feedback in real time. Wireless control and <span translate="no">IMU</span> pipeline performed reliably across all flight tests, with manual control inputs received and acted on correctly throughout testing. Produced a written lessons-learned record covering connector specification, wire management, and realistic firmware iteration budgets, which is being handed forward to future MECH&nbsp;307 teams.
         </p>
       </div>
     </article>
@@ -72,8 +79,8 @@
     <!-- ==========================================
          PROJECT 02: COMPOSITE WING SKIN LAYUP
          ========================================== -->
-    <article class="project">
-      <p class="project-meta">Project 02 / [Course Code] / [Semester] / Role: [Your Specific Role]</p>
+    <article class="project" data-reveal>
+      <p class="project-meta">Project&nbsp;02 / [Course&nbsp;Code] / [Semester] / Role: [Your Specific Role]</p>
       <h2 class="project-title">Composite Wing Skin Layup</h2>
 
       <div class="image-placeholder">[ Hero image: layup, vacuum bag, or finished part ]</div>
@@ -81,7 +88,7 @@
       <div class="project-block">
         <span class="project-block-label">Challenge</span>
         <p class="placeholder-text">
-          [Two to three sentences. State the design constraint that drove the project: target weight, stiffness, surface finish, or manufacturing limit. Quantify what "good enough" looked like before any work started. Frame it as a problem, not as a class assignment.]
+          [Two to three sentences. State the design constraint that drove the project: target weight, stiffness, surface finish, or manufacturing limit. Quantify what “good enough” looked like before any work started. Frame it as a problem, not as a class assignment.]
         </p>
       </div>
 
@@ -104,9 +111,9 @@
     <!-- ==========================================
          PROJECT 03: ANSYS STRUCTURAL ANALYSIS STUDY
          ========================================== -->
-    <article class="project">
-      <p class="project-meta">Project 03 / [Course Code] / [Semester] / Role: [Your Specific Role]</p>
-      <h2 class="project-title">ANSYS Structural Analysis Study</h2>
+    <article class="project" data-reveal>
+      <p class="project-meta">Project&nbsp;03 / [Course&nbsp;Code] / [Semester] / Role: [Your Specific Role]</p>
+      <h2 class="project-title"><span translate="no">ANSYS</span> Structural Analysis Study</h2>
 
       <div class="image-placeholder">[ Hero image: stress contour plot or meshed geometry ]</div>
 
@@ -136,9 +143,9 @@
     <!-- ==========================================
          PROJECT 04: PID MOTOR CONTROL WITH SIMULINK
          ========================================== -->
-    <article class="project">
-      <p class="project-meta">Project 04 / [Course Code] / [Semester] / Role: [Your Specific Role]</p>
-      <h2 class="project-title">PID Motor Control with Simulink</h2>
+    <article class="project" data-reveal>
+      <p class="project-meta">Project&nbsp;04 / [Course&nbsp;Code] / [Semester] / Role: [Your Specific Role]</p>
+      <h2 class="project-title"><span translate="no">PID</span> Motor Control with <span translate="no">Simulink</span></h2>
 
       <div class="image-placeholder">[ Hero image: hardware test rig or Simulink block diagram ]</div>
 
@@ -170,22 +177,15 @@
     <div class="footer-inner">
       <div>&copy; 2026 Jay Suthar</div>
       <div class="footer-links">
-        <a href="mailto:jaysuthar0721@gmail.com">Email</a>
-        <a href="https://github.com/jaysuthar0721" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/jay-suthar-74205b235/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:your.email@colostate.edu">Email</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="portfolio.pdf" target="_blank" rel="noopener">PDF</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    const toggleBtn = document.getElementById('themeToggle');
-    toggleBtn.addEventListener('click', function () {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    });
-  </script>
+  <script src="animations.js" defer></script>
 
 </body>
 </html>

@@ -2,18 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
   <title>Jay Suthar | Mechanical Engineering Portfolio</title>
   <meta name="description" content="Jay Suthar. Mechanical Engineering junior at Colorado State University, focused on aerospace propulsion and integrated vehicle systems.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..600,30..100,0..1;1,9..144,400,50,0&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Theme init: must run before page renders to prevent flash -->
+  <!-- Theme init: runs before render to prevent flash -->
   <script>
     (function () {
       const saved = localStorage.getItem('theme');
@@ -25,47 +28,43 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand">Jay Suthar</a>
+      <a href="index.html" class="nav-brand no-underline">Jay Suthar</a>
       <div class="nav-links">
-        <a href="about.html" class="nav-page-link">About</a>
-        <a href="projects.html" class="nav-page-link">Projects</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark or light theme">Theme</button>
+        <a href="about.html" class="no-underline">About</a>
+        <a href="projects.html" class="no-underline">Projects</a>
+        <button class="theme-toggle" id="themeToggle">Theme</button>
       </div>
     </div>
   </nav>
 
-    <main>
-    <section class="hero">
-      <div class="hero-layout">
-        <div class="hero-text">
-          <h1 class="hero-name">Jay Suthar</h1>
+  <main id="main">
+    <section class="hero" data-hero>
+      <h1 class="hero-name">
+        <span class="word-wrap"><span class="word">Jay</span></span>
+        <span class="word-wrap"><span class="word">Suthar</span></span>
+      </h1>
 
-          <p class="hero-meta">
-            Mechanical Engineering
-            <span class="hero-meta-divider">/</span>
-            Aerospace &amp; Propulsion
-            <br>
-            Colorado State University
-            <span class="hero-meta-divider">/</span>
-            Class of 2027
-          </p>
+      <p class="hero-meta">
+        Mechanical&nbsp;Engineering
+        <span class="hero-meta-divider">/</span>
+        Aerospace&nbsp;&amp;&nbsp;Propulsion
+        <br>
+        Colorado&nbsp;State&nbsp;University
+        <span class="hero-meta-divider">/</span>
+        Class&nbsp;of&nbsp;2027
+      </p>
 
-          <p class="hero-intro">
-            Mechanical Engineering junior at Colorado State University. I work on aerospace propulsion and vehicle systems — CAD, FEA, embedded controls, and hands-on fabrication.
-          </p>
+      <p class="hero-intro">
+        I’m a Mechanical Engineering junior focused on aerospace propulsion and integrated vehicle systems. I treat each project as a sequence of trade studies: identify the constraint that matters most, justify the choice with data, and prototype fast enough to be wrong cheaply.
+      </p>
 
-          <div class="hero-ctas">
-            <a href="about.html">About &rarr;</a>
-            <a href="projects.html">Projects &rarr;</a>
-          </div>
-        </div>
-
-        <div class="hero-photo">
-          <img src="profile.jpg" alt="Jay Suthar" class="hero-photo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="hero-photo-placeholder">Photo</div>
-        </div>
+      <div class="hero-ctas">
+        <a href="about.html">Read about my approach &rarr;</a>
+        <a href="projects.html">See selected projects &rarr;</a>
       </div>
     </section>
   </main>
@@ -74,23 +73,15 @@
     <div class="footer-inner">
       <div>&copy; 2026 Jay Suthar</div>
       <div class="footer-links">
-        <a href="mailto:jaysuthar0721@gmail.com">Email</a>
-        <a href="https://github.com/jaysuthar0721" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/jay-suthar-74205b235/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:your.email@colostate.edu">Email</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="portfolio.pdf" target="_blank" rel="noopener">PDF</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    // Theme toggle handler
-    const toggleBtn = document.getElementById('themeToggle');
-    toggleBtn.addEventListener('click', function () {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    });
-  </script>
+  <script src="animations.js" defer></script>
 
 </body>
 </html>
