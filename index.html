@@ -3,28 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
   <title>Jay Suthar | Mechanical Engineering Portfolio</title>
   <meta name="description" content="Jay Suthar. Mechanical Engineering junior at Colorado State University, focused on aerospace propulsion and integrated vehicle systems.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..600,30..100,0..1;1,9..144,400,50,0&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Theme init: runs before render to prevent flash -->
-  <script>
-    (function () {
-      const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = saved || (prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
 </head>
 <body>
 
@@ -32,51 +21,47 @@
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand no-underline">Jay Suthar</a>
+      <a href="index.html" class="nav-brand">Jay Suthar</a>
       <div class="nav-links">
-        <a href="about.html" class="no-underline">About</a>
-        <a href="projects.html" class="no-underline">Projects</a>
-        <button class="theme-toggle" id="themeToggle">Theme</button>
+        <a href="about.html">01 / About</a>
+        <a href="projects.html">02 / Selected Works</a>
+        <a href="parameters.html">03 / Parameters</a>
       </div>
     </div>
   </nav>
 
-  <main id="main">
-    <section class="hero" data-hero>
-      <h1 class="hero-name">
-        <span class="word-wrap"><span class="word">Jay</span></span>
-        <span class="word-wrap"><span class="word">Suthar</span></span>
-      </h1>
+  <main id="main" class="home">
+    <section class="hero-split" data-hero>
+      <div class="hero-split-panel" aria-hidden="true"></div>
 
-      <p class="hero-meta">
-        Mechanical&nbsp;Engineering
-        <span class="hero-meta-divider">/</span>
-        Aerospace&nbsp;&amp;&nbsp;Propulsion
-        <br>
-        Colorado&nbsp;State&nbsp;University
-        <span class="hero-meta-divider">/</span>
-        Class&nbsp;of&nbsp;2027
-      </p>
+      <div class="hero-split-content">
+        <h1 class="hero-name">
+          <span class="word-wrap"><span class="word">Jay</span></span>
+          <span class="word-wrap"><span class="word">Suthar</span></span>
+        </h1>
 
-      <p class="hero-intro">
-        I’m a Mechanical Engineering junior focused on aerospace propulsion and integrated vehicle systems. I treat each project as a sequence of trade studies: identify the constraint that matters most, justify the choice with data, and prototype fast enough to be wrong cheaply.
-      </p>
+        <p class="hero-subtitle">[ Colorado State University / Class of 2027 ]</p>
 
-      <div class="hero-ctas">
-        <a href="about.html">Read about my approach &rarr;</a>
-        <a href="projects.html">See selected projects &rarr;</a>
+        <p class="hero-intro">
+          I’m a Mechanical Engineering junior focused on aerospace propulsion and integrated vehicle systems. I treat each project as a sequence of trade studies: identify the constraint that matters most, justify the choice with data, and prototype fast enough to be wrong cheaply.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="about.html" class="btn btn-primary">Read about my approach &rarr;</a>
+          <a href="projects.html" class="btn btn-secondary">See selected projects &rarr;</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      <div>&copy; 2026 Jay Suthar</div>
+      <div class="footer-copy">&copy; 2026 Jay Suthar</div>
       <div class="footer-links">
         <a href="mailto:your.email@colostate.edu">Email</a>
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/jaysuthar0721" target="_blank" rel="noopener">GitHub</a>
         <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="portfolio.pdf" target="_blank" rel="noopener">PDF</a>
+        <a href="resume.pdf" target="_blank" rel="noopener" class="accent">Resume_PDF</a>
       </div>
     </div>
   </footer>

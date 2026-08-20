@@ -1,7 +1,7 @@
 /* ============================================================
-   ANIMATIONS - Jay Suthar Portfolio
+   ANIMATIONS - Jay Suthar Portfolio (Swiss redesign)
    Progressive enhancement. Site works without JS; this layer
-   adds the entrance animations, scroll reveals, and nav behavior.
+   adds entrance animations, scroll reveals, and nav behavior.
    Respects prefers-reduced-motion (including runtime changes).
    ============================================================ */
 
@@ -19,15 +19,8 @@
     if (motionQuery.addEventListener) {
       motionQuery.addEventListener('change', handler);
     } else if (motionQuery.addListener) {
-      // Safari < 14
       motionQuery.addListener(handler);
     }
-  }
-
-  // ---------- SAFE localStorage ----------
-  // Wrapped because Safari private mode and some corporate policies throw.
-  function safeSet(key, value) {
-    try { localStorage.setItem(key, value); } catch (e) { /* noop */ }
   }
 
   // ---------- HERO ENTRANCE ----------
@@ -44,7 +37,6 @@
     const reveal = function () { hero.classList.add('revealed'); };
 
     if (document.fonts && document.fonts.ready) {
-      // Race font-loading against a hard timeout so the reveal never stalls.
       let done = false;
       const fire = function () {
         if (done) return;
@@ -61,7 +53,6 @@
   }
 
   // ---------- SCROLL REVEALS ----------
-  // Any element with [data-reveal] fades and blurs in when it enters view.
   function initScrollReveals() {
     const targets = document.querySelectorAll('[data-reveal]');
     if (!targets.length) return;
@@ -87,8 +78,7 @@
   }
 
   // ---------- NAV SCROLL BEHAVIOR ----------
-  // Adds .scrolled once the user is past a small threshold. Guards against
-  // redundant class toggles by tracking previous state.
+  // Adds .scrolled once past a small threshold to reveal the bottom border.
   function initNavScroll() {
     const nav = document.querySelector('.nav');
     if (!nav) return;
@@ -115,60 +105,11 @@
     update();
   }
 
-  // ---------- THEME TOGGLE ----------
-  function initThemeToggle() {
-    const btn = document.getElementById('themeToggle');
-    if (!btn) return;
-
-    btn.addEventListener('click', function () {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-
-      // Trigger a brief transition class so background/color animate smoothly.
-      document.documentElement.classList.add('theme-transitioning');
-      document.documentElement.setAttribute('data-theme', next);
-      safeSet('theme', next);
-
-      setTimeout(function () {
-        document.documentElement.classList.remove('theme-transitioning');
-      }, 400);
-    });
-  }
-
-  // ---------- SCROLL PROGRESS (projects page) ----------
-  // Writes a --progress custom property; CSS transforms use it via var().
-  // Keeps the inline style attribute clean (one custom property, not a
-  // matrix transform string rewritten every frame).
-  function initScrollProgress() {
-    const bar = document.querySelector('[data-scroll-progress]');
-    if (!bar) return;
-
-    let ticking = false;
-    function update() {
-      const doc = document.documentElement;
-      const total = doc.scrollHeight - doc.clientHeight;
-      const pct = total > 0 ? (window.scrollY / total) : 0;
-      bar.style.setProperty('--progress', pct.toFixed(4));
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (!ticking) {
-        window.requestAnimationFrame(update);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    update();
-  }
-
   // ---------- INIT ----------
   function init() {
     animateHero();
     initScrollReveals();
     initNavScroll();
-    initThemeToggle();
-    initScrollProgress();
   }
 
   if (document.readyState === 'loading') {

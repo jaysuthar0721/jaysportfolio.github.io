@@ -3,46 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
   <title>Projects | Jay Suthar</title>
   <meta name="description" content="Selected engineering case studies by Jay Suthar covering integrated drone systems, composites, structural FEA, and motor control.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..600,30..100,0..1;1,9..144,400,50,0&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
-
-  <script>
-    (function () {
-      const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = saved || (prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
-
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand no-underline">Jay Suthar</a>
+      <a href="index.html" class="nav-brand">Jay Suthar</a>
       <div class="nav-links">
-        <a href="about.html" class="no-underline">About</a>
-        <a href="projects.html" class="active no-underline">Projects</a>
-        <button class="theme-toggle" id="themeToggle">Theme</button>
+        <a href="about.html">01 / About</a>
+        <a href="projects.html" class="active">02 / Selected Works</a>
+        <a href="parameters.html">03 / Parameters</a>
       </div>
     </div>
   </nav>
 
   <main id="main">
-    <h1 class="page-title" data-reveal>Selected Projects</h1>
+    <h1 class="page-title" data-reveal>Projects</h1>
+    <hr class="page-title-rule-green">
 
     <!-- ==========================================
          PROJECT 01: VARIABLE GEOMETRY DRONE (REAL)
@@ -51,7 +40,7 @@
       <p class="project-meta">Project&nbsp;01 / MECH&nbsp;307 / Spring&nbsp;2026 / Role: Electronics Architecture &amp; Flight Controls</p>
       <h2 class="project-title">Variable Geometry Drone</h2>
 
-      <div class="image-placeholder">[ Hero image: assembled drone on test stand ]</div>
+      <div class="image-placeholder">[ Fig 01_A: Assembled drone on constrained attitude test rig ]</div>
 
       <div class="project-block">
         <span class="project-block-label">Challenge</span>
@@ -83,28 +72,9 @@
       <p class="project-meta">Project&nbsp;02 / [Course&nbsp;Code] / [Semester] / Role: [Your Specific Role]</p>
       <h2 class="project-title">Composite Wing Skin Layup</h2>
 
-      <div class="image-placeholder">[ Hero image: layup, vacuum bag, or finished part ]</div>
+      <div class="image-placeholder">[ Hero image: Layup, vacuum bag, or finished part ]</div>
 
-      <div class="project-block">
-        <span class="project-block-label">Challenge</span>
-        <p class="placeholder-text">
-          [Two to three sentences. State the design constraint that drove the project: target weight, stiffness, surface finish, or manufacturing limit. Quantify what “good enough” looked like before any work started. Frame it as a problem, not as a class assignment.]
-        </p>
-      </div>
-
-      <div class="project-block">
-        <span class="project-block-label">Action</span>
-        <p class="placeholder-text">
-          [Three to five sentences leading with action verbs. Selected the layup schedule and ply orientation, prepared the tool surface, ran the vacuum-bagged cure cycle at the chosen temperature and pressure, and inspected the part for voids and fiber alignment. Name the decisions you made, not just the activities. If you chose method A over method B, say why.]
-        </p>
-      </div>
-
-      <div class="project-block">
-        <span class="project-block-label">Impact</span>
-        <p class="placeholder-text">
-          [One to two sentences with quantified outcomes. Achieved [X%] of target stiffness at [Y%] of weight budget. Reduced part count by [N] versus the baseline aluminum design. Completed in [Z] iterations within the lab schedule.]
-        </p>
-      </div>
+      <p class="project-placeholder-note">Challenge / Action / Impact copy not yet written &ndash; placeholder template on the live site.</p>
     </article>
 
 
@@ -115,28 +85,9 @@
       <p class="project-meta">Project&nbsp;03 / [Course&nbsp;Code] / [Semester] / Role: [Your Specific Role]</p>
       <h2 class="project-title"><span translate="no">ANSYS</span> Structural Analysis Study</h2>
 
-      <div class="image-placeholder">[ Hero image: stress contour plot or meshed geometry ]</div>
+      <div class="image-placeholder">[ Hero image: Stress contour plot or meshed geometry ]</div>
 
-      <div class="project-block">
-        <span class="project-block-label">Challenge</span>
-        <p class="placeholder-text">
-          [Two to three sentences. Describe the component under analysis, the load case, the failure mode being investigated, and the design margin required. State why hand calculations alone were insufficient.]
-        </p>
-      </div>
-
-      <div class="project-block">
-        <span class="project-block-label">Action</span>
-        <p class="placeholder-text">
-          [Three to five sentences. Built the CAD model with simplifications appropriate to the analysis, applied boundary conditions and loading consistent with the operating environment, refined the mesh until a convergence study showed stress had stabilized, and validated key results against a closed-form hand calculation. Name your modeling choices and the assumptions behind them.]
-        </p>
-      </div>
-
-      <div class="project-block">
-        <span class="project-block-label">Impact</span>
-        <p class="placeholder-text">
-          [One to two sentences with numbers. Reduced peak stress by [X%] versus the original geometry. Identified a design change that recovered [Y%] of safety factor without adding mass. Hand-calc agreement within [Z%] of the FEA result.]
-        </p>
-      </div>
+      <p class="project-placeholder-note">Challenge / Action / Impact copy not yet written &ndash; placeholder template on the live site.</p>
     </article>
 
 
@@ -147,40 +98,21 @@
       <p class="project-meta">Project&nbsp;04 / [Course&nbsp;Code] / [Semester] / Role: [Your Specific Role]</p>
       <h2 class="project-title"><span translate="no">PID</span> Motor Control with <span translate="no">Simulink</span></h2>
 
-      <div class="image-placeholder">[ Hero image: hardware test rig or Simulink block diagram ]</div>
+      <div class="image-placeholder">[ Hero image: Hardware test rig or Simulink block diagram ]</div>
 
-      <div class="project-block">
-        <span class="project-block-label">Challenge</span>
-        <p class="placeholder-text">
-          [Two to three sentences. Describe the plant being controlled, the performance target (settling time, overshoot, steady-state error), and any physical limit you had to design around (saturation, sample rate, sensor noise).]
-        </p>
-      </div>
-
-      <div class="project-block">
-        <span class="project-block-label">Action</span>
-        <p class="placeholder-text">
-          [Three to five sentences. Built a Simulink model of the plant and validated it against open-loop hardware tests, designed a PID controller using a chosen tuning method, tested controller robustness against modeled disturbances, and ported the gains to the hardware target for final verification. Name the tuning method and the disturbance cases you simulated.]
-        </p>
-      </div>
-
-      <div class="project-block">
-        <span class="project-block-label">Impact</span>
-        <p class="placeholder-text">
-          [One to two sentences with numbers. Hit a settling time of [X seconds] with overshoot below [Y%]. Closed the simulation-to-hardware gap to within [Z%] on the metric that mattered. Delivered tuned controller code that runs on [target platform] at [N] Hz.]
-        </p>
-      </div>
+      <p class="project-placeholder-note">Challenge / Action / Impact copy not yet written &ndash; placeholder template on the live site.</p>
     </article>
 
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      <div>&copy; 2026 Jay Suthar</div>
+      <div class="footer-copy">&copy; 2026 Jay Suthar</div>
       <div class="footer-links">
         <a href="mailto:your.email@colostate.edu">Email</a>
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/jaysuthar0721" target="_blank" rel="noopener">GitHub</a>
         <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="portfolio.pdf" target="_blank" rel="noopener">PDF</a>
+        <a href="resume.pdf" target="_blank" rel="noopener" class="accent">Resume_PDF</a>
       </div>
     </div>
   </footer>
