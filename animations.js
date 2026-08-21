@@ -1,7 +1,7 @@
 /* ============================================================
    ANIMATIONS - Jay Suthar Portfolio (Swiss redesign)
    Progressive enhancement. Site works without JS; this layer
-   adds entrance animations, scroll reveals, and nav behavior.
+   adds entrance animations and scroll reveals.
    Respects prefers-reduced-motion (including runtime changes).
    ============================================================ */
 
@@ -77,39 +77,10 @@
     targets.forEach(function (el) { observer.observe(el); });
   }
 
-  // ---------- NAV SCROLL BEHAVIOR ----------
-  // Adds .scrolled once past a small threshold to reveal the bottom border.
-  function initNavScroll() {
-    const nav = document.querySelector('.nav');
-    if (!nav) return;
-
-    let ticking = false;
-    let currentlyScrolled = false;
-
-    function update() {
-      const shouldBeScrolled = window.scrollY > 24;
-      if (shouldBeScrolled !== currentlyScrolled) {
-        nav.classList.toggle('scrolled', shouldBeScrolled);
-        currentlyScrolled = shouldBeScrolled;
-      }
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (!ticking) {
-        window.requestAnimationFrame(update);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    update();
-  }
-
   // ---------- INIT ----------
   function init() {
     animateHero();
     initScrollReveals();
-    initNavScroll();
   }
 
   if (document.readyState === 'loading') {
